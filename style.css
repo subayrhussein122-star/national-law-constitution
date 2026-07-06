@@ -1,0 +1,227 @@
+/* 
+   Premium Styling for National Law and Constitution Library 
+   Uses modern aesthetics: Glassmorphism, Micro-animations, Google Fonts, Curated Colors 
+*/
+
+:root {
+    /* Custom, premium color palette */
+    --primary-color: #4F46E5;     /* Vibrant Indigo */
+    --primary-hover: #4338CA;
+    --secondary-color: #10B981;   /* Emerald Green */
+    --accent-color: #F59E0B;      /* Amber */
+    --dark-bg: #0F172A;           /* Slate 900 for dark accents */
+    --light-bg: #F8FAFC;          /* Slate 50 for main background */
+    --text-main: #1E293B;         /* Slate 800 */
+    --text-muted: #64748B;        /* Slate 500 */
+    
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    --hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--light-bg);
+    /* Soft gradient background */
+    background-image: radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.05) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: var(--text-main);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* --- Premium Navbar --- */
+.navbar {
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+}
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.2rem;
+    transition: color 0.3s ease;
+}
+
+/* Navbar link hover animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* --- Cards (Glassmorphism & Hover effects) --- */
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background-color: transparent !important;
+    padding: 1.25rem 1.5rem;
+}
+
+/* Dashboard specific card overrides to make them pop */
+.bg-primary { background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)) !important; }
+.bg-success { background: linear-gradient(135deg, var(--secondary-color), #059669) !important; }
+.bg-warning { background: linear-gradient(135deg, var(--accent-color), #D97706) !important; }
+.bg-info    { background: linear-gradient(135deg, #0EA5E9, #0284C7) !important; }
+
+/* Let dashboard colored cards have white text */
+.card.text-white {
+    border: none;
+}
+.card.text-white .card-header {
+    border-bottom-color: rgba(255,255,255,0.2);
+}
+
+/* --- Tables --- */
+.table {
+    --bs-table-bg: transparent;
+    vertical-align: middle;
+}
+
+.table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+    padding: 1rem;
+}
+
+.table-dark {
+    --bs-table-bg: var(--dark-bg);
+    --bs-table-color: #fff;
+    --bs-table-border-color: rgba(255,255,255,0.1);
+}
+
+.table td {
+    padding: 1rem;
+    color: var(--text-main);
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+/* Table row hover micro-animation */
+.table-hover tbody tr {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(79, 70, 229, 0.03);
+    transform: scale(1.005);
+    box-shadow: 0 4px 6px -4px rgba(0,0,0,0.05);
+    z-index: 10;
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+/* --- Buttons --- */
+.btn {
+    font-weight: 500;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    transition: all 0.2s ease;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+}
+
+.btn-success:hover {
+    background-color: #059669;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* --- Form Inputs --- */
+.form-control {
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 0.75rem 1rem;
+    background-color: rgba(255,255,255,0.9);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+    border-color: var(--primary-color);
+    background-color: #fff;
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 0.4rem;
+}
+
+/* --- Badges --- */
+.badge {
+    padding: 0.4em 0.8em;
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: transparent !important;
+    border-top: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+/* Utility layout adjustments */
+.d-flex h2 {
+    color: var(--dark-bg);
+}
