@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Set your custom username and password right here in the code!
     // (This completely ignores the database)
-    if ($username === 'admin' && $password === 'password123') {
+    if ($username === 'admin' && $password === '123') {
         // Success! Set session variables
         $_SESSION['admin_logged_in'] = true;
         $_SESSION['admin_username'] = $username;
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="mb-4">
                         <label class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" required placeholder="Enter password">
+                        <input type="text" name="password" pattern="[0-9]+" class="form-control" required placeholder="Enter password">
                     </div>
                     <button type="submit" class="btn btn-primary w-100 py-2">Login</button>
                 </form>
