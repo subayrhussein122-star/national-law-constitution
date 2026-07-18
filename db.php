@@ -19,6 +19,4 @@ if (!$conn) {
     // If it fails, stop the script and print the error
     die("Connection failed: " . mysqli_connect_error());
 }
-
-echo "Database Connected!";
 ?>
