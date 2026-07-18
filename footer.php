@@ -11,8 +11,8 @@
     </div>
 </footer>
 
-<!-- Include Bootstrap 5 JS Bundle (with Popper) for interactive components like the mobile navbar -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Include Bootstrap 5 JS Bundle (with Popper) locally for interactive components like the mobile navbar -->
+<script src="bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
